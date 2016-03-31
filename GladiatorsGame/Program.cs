@@ -178,7 +178,7 @@ namespace GladiatorsGame
             UserInterface.DrawHorizontalLine();
             UserInterface.DrawCombatLog(CombatLog.GetLineText(), CombatLog.GetLineColor());
             UserInterface.DrawHorizontalLine();            
-            UserInterface.DrawPlayerInfo(Player1.GetName(), Player1.GetLevel(), Player1.GetStrength(), Player1.GetAgility(), Player1.GetVitality(), Player1.GetHealth(), Player1.GetMaxHealth(), Player1.GetEnergy(), Player1.GetMaxEnergy());
+            UserInterface.DrawPlayerInfo(Player1.GetName(), Player1.GetLevel(), Player1.GetStrength(), Player1.GetAgility(), Player1.GetVitality(), Player1.GetHealth(), Player1.GetMaxHealth(), Player1.GetEnergy(), Player1.GetMaxEnergy(), Player1.GetStun(), Player1.GetBleed(), Player1.GetDaze());
             UserInterface.DrawHorizontalLine();
             UserInterface.DrawSkillBar(Player1.GetUnlockedSkill());
             UserInterface.DrawHorizontalLine();
@@ -228,11 +228,29 @@ namespace GladiatorsGame
             Console.WriteLine("----------------------------------------------------------------");
         }
 
-        public static void DrawPlayerInfo(string Name, int Level, int Strength, int Agility, int Vitality, int Health, int MaxHealth, int Energy, int MaxEnergy)
+        public static void DrawPlayerInfo(string Name, int Level, int Strength, int Agility, int Vitality, int Health, int MaxHealth, int Energy, int MaxEnergy, int Stun, int Bleed, int Daze)
         {
+            string Status;
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("Gladiator " + Name.ToString() + " - Level " + Level.ToString());
+            Status = "Gladiator " + Name + " - Level " + Level.ToString() + " ";
+
+            if (Stun >= 1)
+            {
+                Status = Status + "Stun(" + Stun.ToString() + ") ";
+            }
+
+            if (Bleed >= 1)
+            {
+                Status = Status + "Bleed(" + Bleed.ToString() + ") ";
+            }
+
+            if (Daze >= 1)
+            {
+                Status = Status + "Daze(" + Daze.ToString() + ") ";
+            }
+
+            Console.WriteLine(Status);
             Console.WriteLine("Strength: "+ Strength.ToString() + "         Agility: " + Agility.ToString() + "         Vitality: " + Vitality.ToString());
             Console.WriteLine("Health: " + Health.ToString() + "/" + MaxHealth.ToString() + "      Energy: " + Energy.ToString() + "/" + MaxEnergy.ToString());
 
