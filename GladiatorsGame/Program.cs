@@ -174,7 +174,7 @@ namespace GladiatorsGame
             Console.Clear();
 
             UserInterface.DrawHorizontalLine();
-            UserInterface.DrawEnemyInfo(CurrentEnemy.GetName(), CurrentEnemy.GetHealth(), CurrentEnemy.GetMaxHealth());
+            UserInterface.DrawEnemyInfo(CurrentEnemy.GetName(), CurrentEnemy.GetHealth(), CurrentEnemy.GetMaxHealth(), CurrentEnemy.GetStun(), CurrentEnemy.GetBleed(), CurrentEnemy.GetDaze());
             UserInterface.DrawHorizontalLine();
             UserInterface.DrawCombatLog(CombatLog.GetLineText(), CombatLog.GetLineColor());
             UserInterface.DrawHorizontalLine();            
@@ -257,11 +257,29 @@ namespace GladiatorsGame
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
-        public static void DrawEnemyInfo(string Name, int Health, int MaxHealth)
+        public static void DrawEnemyInfo(string Name, int Health, int MaxHealth, int Stun, int Bleed, int Daze)
         {
+            string Status;
             Console.ForegroundColor = ConsoleColor.Red;
 
-            Console.WriteLine("Opponent: " + Name);
+            Status = "Opponent: " + Name + " ";
+
+            if (Stun >= 1)
+            {
+                Status = Status + "Stun(" + Stun.ToString() + ") ";
+            }
+
+            if (Bleed >= 1)
+            {
+                Status = Status + "Bleed(" + Bleed.ToString() + ") ";
+            }
+
+            if (Daze >= 1)
+            {
+                Status = Status + "Daze(" + Daze.ToString() + ") ";
+            }
+
+            Console.WriteLine(Status);
             Console.WriteLine("Health: " + Health.ToString() + "/" + MaxHealth.ToString());
 
             Console.ForegroundColor = ConsoleColor.Gray;
