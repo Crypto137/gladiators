@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Core\Core_GameLogic.cs" />
+    <Compile Include="Core\Core_UI.cs" />
+    <Compile Include="Game\Game_Enemy.cs" />
+    <Compile Include="Game\Game_Player.cs" />
+    <Compile Include="MainGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
