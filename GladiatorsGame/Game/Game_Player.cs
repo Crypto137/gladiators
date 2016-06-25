@@ -85,7 +85,7 @@ namespace GladiatorsGame
             string logText;
             bool effect;
 
-            damage = RNGesus.Next(4, 9) + (strength - 10);
+            damage = RNGesus.Next(2, 5);
             effect = GameLogic.CheckChance(50);
             logText = "Your Bash dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -93,8 +93,8 @@ namespace GladiatorsGame
 
             if (effect == true)
             {
-                target.SetStun(1);
-                logText = logText + target.GetName() + " got stunned for 1 turn.";
+                target.SetStun(2);
+                logText = logText + target.GetName() + " got stunned.";
             }
             else
             {
