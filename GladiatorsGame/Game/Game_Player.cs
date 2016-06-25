@@ -130,8 +130,26 @@ namespace GladiatorsGame
 
         public string Skill_SavageCut(Enemy target)
         {
-            //NYI
-            return null;
+            Random RNGesus = new Random();
+            int damage;
+            string logText;
+            bool effect;
+
+            damage = 1 + (strength - 10);
+            effect = GameLogic.CheckChance(50);
+
+            if (effect == true)
+            {
+                target.SetBleed(4);
+                target.SetBleedDamage(damage);
+                logText = target.GetName() + " is bleeding!";
+            }
+            else
+            {
+                logText = target.GetName() + " evaded your Savage Cut.";
+            }
+
+            return logText;
         }
 
         public string LevelUp()

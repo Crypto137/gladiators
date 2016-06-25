@@ -10,7 +10,7 @@ namespace GladiatorsGame
     {
         private string name;
         private int level, health, maxHealth;
-        private int stun, bleed, daze;
+        private int stun, bleed, bleedDamage, daze;
 
         public void Generate()
         {
@@ -104,6 +104,11 @@ namespace GladiatorsGame
             return bleed;
         }
 
+        public int GetBleedDamage()
+        {
+            return bleedDamage;
+        }
+
         public int GetDaze()
         {
             return daze;
@@ -137,7 +142,11 @@ namespace GladiatorsGame
         public void SetBleed(int newBleed)
         {
             bleed = newBleed;
+        }
 
+        public void SetBleedDamage(int newBleedDamage)
+        {
+            bleedDamage = newBleedDamage;
         }
 
         public void SetDaze(int newDaze)

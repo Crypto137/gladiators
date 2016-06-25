@@ -60,10 +60,10 @@ namespace GladiatorsGame
 
                     do
                     {
+                        //Player Turn
                         player1.SetFinishedTurn(false);
                         UpdateScreen();
 
-                        //Get player input and use skill accordingly
                         switch (GetPlayerInput())
                         {
                             case "D1":
@@ -106,7 +106,14 @@ namespace GladiatorsGame
                         UpdateScreen();
                         System.Threading.Thread.Sleep(250);
 
-                        //Enemy reaction (attack or death, states)
+                        //Enemy Turn
+                        if (currentEnemy.GetBleed() >= 1)
+                        {
+                            combatLog.WriteLine(currentEnemy.GetName() + " bleeds for " + currentEnemy.GetBleedDamage() + " damage!", ConsoleColor.Green);
+                            currentEnemy.SetHealth(currentEnemy.GetHealth() - currentEnemy.GetBleedDamage());
+                            currentEnemy.SetBleed(currentEnemy.GetBleed() - 1);
+                        }
+
                         if (currentEnemy.GetHealth() <= 0)
                         {
                             combatLog.WriteLine(currentEnemy.GetName() + " falls breathless before you.", ConsoleColor.Yellow);
