@@ -78,10 +78,30 @@ namespace GladiatorsGame
             return LogText;
         }
 
-        public string Skill_Bash(Enemy Target)
+        public string Skill_Bash(Enemy target)
         {
-            //NYI
-            return null;
+            Random RNGesus = new Random();
+            int damage;
+            string logText;
+            bool effect;
+
+            damage = RNGesus.Next(4, 9) + (Strength - 10);
+            effect = GameLogic.CheckChance(50);
+            logText = "Your Bash dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
+
+            target.SetHealth(target.GetHealth() - damage);
+
+            if (effect == true)
+            {
+                target.SetStun(1);
+                logText = logText + target.GetName() + " got stunned for 1 turn.";
+            }
+            else
+            {
+                logText = logText + target.GetName() + " resisted stun.";
+            }
+            
+            return logText;
         }
 
         public string Skill_DirtThrow(Enemy Target)
