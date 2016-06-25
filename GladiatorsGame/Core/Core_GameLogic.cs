@@ -12,9 +12,9 @@ namespace GladiatorsGame
         {
             int chanceRoll;
             bool chanceResult;
-            Random RNGesus = new Random();
+            Random rnd = new Random();
 
-            chanceRoll = RNGesus.Next(0, 101);
+            chanceRoll = rnd.Next(0, 101);
 
             if (chanceRoll <= chance)
             {

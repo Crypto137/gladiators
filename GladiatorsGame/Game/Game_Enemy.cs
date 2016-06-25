@@ -14,8 +14,8 @@ namespace GladiatorsGame
 
         public void Generate()
         {
-            Random RNGesus = new Random();
-            int nameID = RNGesus.Next(0, 10);
+            Random rnd = new Random();
+            int nameID = rnd.Next(0, 10);
 
             switch (nameID)
             {
@@ -53,7 +53,7 @@ namespace GladiatorsGame
 
             level = 1;
 
-            maxHealth = RNGesus.Next(95, 106);
+            maxHealth = rnd.Next(95, 106);
             health = maxHealth;
 
             stun = 0;
@@ -63,11 +63,11 @@ namespace GladiatorsGame
 
         public string Attack(Player Target)
         {
-            Random RNGesus = new Random();
+            Random rnd = new Random();
             int damage;
             string logText;
 
-            damage = RNGesus.Next(8, 13);
+            damage = rnd.Next(8, 13);
             Target.SetHealth(Target.GetHealth() - damage);
 
             logText = name + " attacked you for " + damage.ToString() + " damage.";

@@ -54,11 +54,11 @@ namespace GladiatorsGame
 
         public string Skill_HeroicAssault(Enemy target)
         {
-            Random RNGesus = new Random();
+            Random rnd = new Random();
             int damage;
             string logText;
 
-            damage = RNGesus.Next(8, 13) + (strength - 10);
+            damage = rnd.Next(8, 13) + (strength - 10);
             target.SetHealth(target.GetHealth() - damage);
 
             logText = "Your Heroic Assault dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
@@ -67,11 +67,11 @@ namespace GladiatorsGame
 
         public string Skill_DesperateStrike(Enemy target)
         {
-            Random RNGesus = new Random();
+            Random rnd = new Random();
             int damage;
             string logText;
 
-            damage = RNGesus.Next(1, 21) + (strength - 10);
+            damage = rnd.Next(1, 21) + (strength - 10);
             target.SetHealth(target.GetHealth() - damage);
 
             logText = "Your Desperate Strike dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
@@ -80,12 +80,12 @@ namespace GladiatorsGame
 
         public string Skill_Bash(Enemy target)
         {
-            Random RNGesus = new Random();
+            Random rnd = new Random();
             int damage;
             string logText;
             bool effect;
 
-            damage = RNGesus.Next(2, 5);
+            damage = rnd.Next(2, 5);
             effect = GameLogic.CheckChance(50);
             logText = "Your Bash dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -106,12 +106,12 @@ namespace GladiatorsGame
 
         public string Skill_DirtThrow(Enemy target)
         {
-            Random RNGesus = new Random();
+            Random rnd = new Random();
             int damage;
             string logText;
             bool effect;
 
-            damage = RNGesus.Next(2, 5);
+            damage = rnd.Next(2, 5);
             effect = GameLogic.CheckChance(50);
             logText = "Your Dirt Throw dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -130,7 +130,6 @@ namespace GladiatorsGame
 
         public string Skill_SavageCut(Enemy target)
         {
-            Random RNGesus = new Random();
             int damage;
             string logText;
             bool effect;
