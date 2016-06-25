@@ -16,7 +16,7 @@ using System.Threading.Tasks;
     - [DONE] Implement skill scaling with strength
     - [DONE] Implement ending after level 100.
     - [DONE] Fix variable names.
-    - Implement additional skills (+ states)
+    - [DONE] Implement additional skills (+ states)
     - Implement skill costs
     - Implement enemy scaling
     - Implement enemy affixes
