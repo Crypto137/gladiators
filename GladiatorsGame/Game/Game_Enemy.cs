@@ -58,6 +58,7 @@ namespace GladiatorsGame
 
             stun = 0;
             bleed = 0;
+            bleedDamage = 0;
             daze = 0;
         }
 
