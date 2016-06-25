@@ -18,82 +18,82 @@ namespace GladiatorsGame
             Console.WriteLine("----------------------------------------------------------------");
         }
 
-        public static void DrawPlayerInfo(string Name, int Level, int Strength, int Agility, int Vitality, int Health, int MaxHealth, int Energy, int MaxEnergy, int Stun, int Bleed, int Daze)
+        public static void DrawPlayerInfo(string name, int level, int strength, int agility, int vitality, int health, int maxHealth, int energy, int maxEnergy, int stun, int bleed, int daze)
         {
-            string Status;
+            string status;
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Status = "Gladiator " + Name + " - Level " + Level.ToString() + " ";
+            status = "Gladiator " + name + " - Level " + level.ToString() + " ";
 
-            if (Stun >= 1)
+            if (stun >= 1)
             {
-                Status = Status + "Stun(" + Stun.ToString() + ") ";
+                status = status + "Stun(" + stun.ToString() + ") ";
             }
 
-            if (Bleed >= 1)
+            if (bleed >= 1)
             {
-                Status = Status + "Bleed(" + Bleed.ToString() + ") ";
+                status = status + "Bleed(" + bleed.ToString() + ") ";
             }
 
-            if (Daze >= 1)
+            if (daze >= 1)
             {
-                Status = Status + "Daze(" + Daze.ToString() + ") ";
+                status = status + "Daze(" + daze.ToString() + ") ";
             }
 
-            Console.WriteLine(Status);
-            Console.WriteLine("Strength: " + Strength.ToString() + "         Agility: " + Agility.ToString() + "         Vitality: " + Vitality.ToString());
-            Console.WriteLine("Health: " + Health.ToString() + "/" + MaxHealth.ToString() + "      Energy: " + Energy.ToString() + "/" + MaxEnergy.ToString());
+            Console.WriteLine(status);
+            Console.WriteLine("Strength: " + strength.ToString() + "         Agility: " + agility.ToString() + "         Vitality: " + vitality.ToString());
+            Console.WriteLine("Health: " + health.ToString() + "/" + maxHealth.ToString() + "      Energy: " + energy.ToString() + "/" + maxEnergy.ToString());
 
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
-        public static void DrawEnemyInfo(string Name, int Health, int MaxHealth, int Stun, int Bleed, int Daze)
+        public static void DrawEnemyInfo(string name, int health, int maxHealth, int stun, int bleed, int daze)
         {
-            string Status;
+            string status;
             Console.ForegroundColor = ConsoleColor.Red;
 
-            Status = "Opponent: " + Name + " ";
+            status = "Opponent: " + name + " ";
 
-            if (Stun >= 1)
+            if (stun >= 1)
             {
-                Status = Status + "Stun(" + Stun.ToString() + ") ";
+                status = status + "Stun(" + stun.ToString() + ") ";
             }
 
-            if (Bleed >= 1)
+            if (bleed >= 1)
             {
-                Status = Status + "Bleed(" + Bleed.ToString() + ") ";
+                status = status + "Bleed(" + bleed.ToString() + ") ";
             }
 
-            if (Daze >= 1)
+            if (daze >= 1)
             {
-                Status = Status + "Daze(" + Daze.ToString() + ") ";
+                status = status + "Daze(" + daze.ToString() + ") ";
             }
 
-            Console.WriteLine(Status);
-            Console.WriteLine("Health: " + Health.ToString() + "/" + MaxHealth.ToString());
+            Console.WriteLine(status);
+            Console.WriteLine("Health: " + health.ToString() + "/" + maxHealth.ToString());
 
             Console.ForegroundColor = ConsoleColor.Gray;
         }
 
-        public static void DrawCombatLog(string[] LineText, ConsoleColor[] LineColor)
+        public static void DrawCombatLog(string[] lineText, ConsoleColor[] lineColor)
         {
-            for (int i = 0; i <= LineText.Length - 1; i++)
+            for (int i = 0; i <= lineText.Length - 1; i++)
             {
-                Console.ForegroundColor = LineColor[i];
-                Console.WriteLine(LineText[i]);
+                Console.ForegroundColor = lineColor[i];
+                Console.WriteLine(lineText[i]);
                 Console.ForegroundColor = ConsoleColor.Gray;
             }
         }
 
-        public static void DrawSkillBar(bool[] UnlockedSkill)
+        public static void DrawSkillBar(bool[] unlockedSkill)
         {
-            string[] SkillText = new string[5] { "1. Heroic Assault (0)", "2. Desperate Strike (0)", "3. Bash (0)", "4. Dirt Throw (0)", "5. Savage Cut (0)" };
+            string[] skillText = new string[5] { "1. Heroic Assault (0)", "2. Desperate Strike (0)", "3. Bash (0)", "4. Dirt Throw (0)", "5. Savage Cut (0)" };
             Console.WriteLine("Available Skills:");
             for (int i = 0; i <= 4; i++)
             {
-                if (UnlockedSkill[i] == true)
+                if (unlockedSkill[i] == true)
                 {
-                    Console.WriteLine(SkillText[i]);
+                    Console.WriteLine(skillText[i]);
                 }
             }
         }
@@ -101,48 +101,48 @@ namespace GladiatorsGame
 
     class Log
     {
-        private string[] LineText = new string[10];
-        private ConsoleColor[] LineColor = new ConsoleColor[10];
+        private string[] lineText = new string[10];
+        private ConsoleColor[] lineColor = new ConsoleColor[10];
 
-        public void WriteLine(string NewLineText, ConsoleColor NewLineColor)
+        public void WriteLine(string newLineText, ConsoleColor newLineColor)
         {
-            LineText[0] = LineText[1];
-            LineText[1] = LineText[2];
-            LineText[2] = LineText[3];
-            LineText[3] = LineText[4];
-            LineText[4] = LineText[5];
-            LineText[5] = LineText[6];
-            LineText[6] = LineText[7];
-            LineText[7] = LineText[8];
-            LineText[8] = LineText[9];
-            LineText[9] = NewLineText;
+            lineText[0] = lineText[1];
+            lineText[1] = lineText[2];
+            lineText[2] = lineText[3];
+            lineText[3] = lineText[4];
+            lineText[4] = lineText[5];
+            lineText[5] = lineText[6];
+            lineText[6] = lineText[7];
+            lineText[7] = lineText[8];
+            lineText[8] = lineText[9];
+            lineText[9] = newLineText;
 
-            LineColor[0] = LineColor[1];
-            LineColor[1] = LineColor[2];
-            LineColor[2] = LineColor[3];
-            LineColor[3] = LineColor[4];
-            LineColor[4] = LineColor[5];
-            LineColor[5] = LineColor[6];
-            LineColor[6] = LineColor[7];
-            LineColor[7] = LineColor[8];
-            LineColor[8] = LineColor[9];
-            LineColor[9] = NewLineColor;
+            lineColor[0] = lineColor[1];
+            lineColor[1] = lineColor[2];
+            lineColor[2] = lineColor[3];
+            lineColor[3] = lineColor[4];
+            lineColor[4] = lineColor[5];
+            lineColor[5] = lineColor[6];
+            lineColor[6] = lineColor[7];
+            lineColor[7] = lineColor[8];
+            lineColor[8] = lineColor[9];
+            lineColor[9] = newLineColor;
         }
 
         public string[] GetLineText()
         {
-            return LineText;
+            return lineText;
         }
 
         public ConsoleColor[] GetLineColor()
         {
-            return LineColor;
+            return lineColor;
         }
 
         public void Clear()
         {
-            Array.Clear(LineText, 0, 10);
-            Array.Clear(LineColor, 0, 10);
+            Array.Clear(lineText, 0, 10);
+            Array.Clear(lineColor, 0, 10);
         }
     }
 }

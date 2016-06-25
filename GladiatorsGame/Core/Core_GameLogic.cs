@@ -8,24 +8,24 @@ namespace GladiatorsGame
 {
     class GameLogic
     {
-        public static bool CheckChance(int Chance)
+        public static bool CheckChance(int chance)
         {
-            int ChanceRoll;
-            bool ChanceResult;
+            int chanceRoll;
+            bool chanceResult;
             Random RNGesus = new Random();
 
-            ChanceRoll = RNGesus.Next(0, 101);
+            chanceRoll = RNGesus.Next(0, 101);
 
-            if (ChanceRoll <= Chance)
+            if (chanceRoll <= chance)
             {
-                ChanceResult = true;
+                chanceResult = true;
             }
             else
             {
-                ChanceResult = false;
+                chanceResult = false;
             }
 
-            return ChanceResult;
+            return chanceResult;
         }
     }
 }

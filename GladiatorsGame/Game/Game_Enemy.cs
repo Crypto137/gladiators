@@ -8,141 +8,150 @@ namespace GladiatorsGame
 {
     class Enemy
     {
-        private string Name;
-        private int Level, Health, MaxHealth;
-        private int Stun, Bleed, Daze;
+        private string name;
+        private int level, health, maxHealth;
+        private int stun, bleed, bleedDamage, daze;
 
         public void Generate()
         {
             Random RNGesus = new Random();
-            int NameID = RNGesus.Next(0, 10);
+            int nameID = RNGesus.Next(0, 10);
 
-            switch (NameID)
+            switch (nameID)
             {
                 case 0:
-                    Name = "Gladiator";
+                    name = "Gladiator";
                     break;
                 case 1:
-                    Name = "Prisoner";
+                    name = "Prisoner";
                     break;
                 case 2:
-                    Name = "Criminal";
+                    name = "Criminal";
                     break;
                 case 3:
-                    Name = "Barbarian";
+                    name = "Barbarian";
                     break;
                 case 4:
-                    Name = "Duelist";
+                    name = "Duelist";
                     break;
                 case 5:
-                    Name = "Lion";
+                    name = "Lion";
                     break;
                 case 6:
-                    Name = "Tiger";
+                    name = "Tiger";
                     break;
                 case 7:
-                    Name = "Panther";
+                    name = "Panther";
                     break;
                 case 8:
-                    Name = "Bull";
+                    name = "Bull";
                     break;
                 case 9:
-                    Name = "Bear";
+                    name = "Bear";
                     break;
             }
 
-            Level = 1;
+            level = 1;
 
-            MaxHealth = RNGesus.Next(95, 106);
-            Health = MaxHealth;
+            maxHealth = RNGesus.Next(95, 106);
+            health = maxHealth;
 
-            Stun = 0;
-            Bleed = 0;
-            Daze = 0;
+            stun = 0;
+            bleed = 0;
+            daze = 0;
         }
 
         public string Attack(Player Target)
         {
             Random RNGesus = new Random();
-            int Damage;
-            string LogText;
+            int damage;
+            string logText;
 
-            Damage = RNGesus.Next(8, 13);
-            Target.SetHealth(Target.GetHealth() - Damage);
+            damage = RNGesus.Next(8, 13);
+            Target.SetHealth(Target.GetHealth() - damage);
 
-            LogText = Name + " attacked you for " + Damage.ToString() + " damage.";
-            return LogText;
+            logText = name + " attacked you for " + damage.ToString() + " damage.";
+            return logText;
         }
 
         public string GetName()
         {
-            return Name;
+            return name;
         }
 
         public int GetLevel()
         {
-            return Level;
+            return level;
         }
 
         public int GetHealth()
         {
-            return Health;
+            return health;
         }
 
         public int GetMaxHealth()
         {
-            return MaxHealth;
+            return maxHealth;
         }
 
         public int GetStun()
         {
-            return Stun;
+            return stun;
         }
 
         public int GetBleed()
         {
-            return Bleed;
+            return bleed;
+        }
+
+        public int GetBleedDamage()
+        {
+            return bleedDamage;
         }
 
         public int GetDaze()
         {
-            return Daze;
+            return daze;
         }
 
         public void SetName(string newName)
         {
-            Name = newName;
+            name = newName;
         }
 
         public void SetLevel(int newLevel)
         {
-            Level = newLevel;
+            level = newLevel;
         }
 
         public void SetHealth(int newHealth)
         {
-            Health = newHealth;
+            health = newHealth;
         }
 
         public void SetMaxHealth(int newMaxHealth)
         {
-            MaxHealth = newMaxHealth;
+            maxHealth = newMaxHealth;
         }
 
         public void SetStun(int newStun)
         {
-            Stun = newStun;
+            stun = newStun;
         }
 
         public void SetBleed(int newBleed)
         {
-            Bleed = newBleed;
+            bleed = newBleed;
+        }
 
+        public void SetBleedDamage(int newBleedDamage)
+        {
+            bleedDamage = newBleedDamage;
         }
 
         public void SetDaze(int newDaze)
         {
-            Daze = newDaze;
+            daze = newDaze;
         }
     }
 }
