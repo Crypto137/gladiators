@@ -115,6 +115,8 @@ namespace GladiatorsGame
             effect = GameLogic.CheckChance(50);
             logText = "Your Dirt Throw dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
+            target.SetHealth(target.GetHealth() - damage);
+
             if (effect == true)
             {
                 target.SetDaze(3);
