@@ -8,74 +8,74 @@ namespace GladiatorsGame
 {
     class Player
     {
-        private string Name;
-        private int Level, Strength, Agility, Vitality, Health, MaxHealth, Energy, MaxEnergy;
-        private int Stun, Bleed, Daze;
-        private bool FinishedTurn, FinishedLevelUp, FinishedGame;
-        private bool[] UnlockedSkill = new bool[5];
+        private string name;
+        private int level, strength, agility, vitality, health, maxHealth, energy, maxEnergy;
+        private int stun, bleed, daze;
+        private bool finishedTurn, finishedLevelUp, finishedGame;
+        private bool[] unlockedSkill = new bool[5];
 
         public void Initialize()
         {
-            Name = "Maximus";
+            name = "Maximus";
 
-            Level = 1;
+            level = 1;
 
-            Strength = 10;
-            Agility = 10;
-            Vitality = 10;
+            strength = 10;
+            agility = 10;
+            vitality = 10;
 
-            MaxHealth = Vitality * 10;
-            Health = MaxHealth;
-            MaxEnergy = Agility * 10;
-            Energy = MaxEnergy;
+            maxHealth = vitality * 10;
+            health = maxHealth;
+            maxEnergy = agility * 10;
+            energy = maxEnergy;
 
-            Stun = 0;
-            Bleed = 0;
-            Daze = 0;
+            stun = 0;
+            bleed = 0;
+            daze = 0;
 
-            FinishedTurn = false;
-            FinishedLevelUp = true;
-            FinishedGame = false;
+            finishedTurn = false;
+            finishedLevelUp = true;
+            finishedGame = false;
 
-            UnlockedSkill[0] = true;
-            UnlockedSkill[1] = true;
-            UnlockedSkill[2] = false;
-            UnlockedSkill[3] = false;
-            UnlockedSkill[4] = false;
+            unlockedSkill[0] = true;
+            unlockedSkill[1] = true;
+            unlockedSkill[2] = false;
+            unlockedSkill[3] = false;
+            unlockedSkill[4] = false;
         }
 
         public void UpdateStats()
         {
-            MaxHealth = Vitality * 10;
-            Health = MaxHealth;
-            MaxEnergy = Agility * 10;
-            Energy = MaxEnergy;
+            maxHealth = vitality * 10;
+            health = maxHealth;
+            maxEnergy = agility * 10;
+            energy = maxEnergy;
         }
 
-        public string Skill_HeroicAssault(Enemy Target)
+        public string Skill_HeroicAssault(Enemy target)
         {
             Random RNGesus = new Random();
-            int Damage;
-            string LogText;
+            int damage;
+            string logText;
 
-            Damage = RNGesus.Next(8, 13) + (Strength - 10);
-            Target.SetHealth(Target.GetHealth() - Damage);
+            damage = RNGesus.Next(8, 13) + (strength - 10);
+            target.SetHealth(target.GetHealth() - damage);
 
-            LogText = "Your Heroic Assault dealt " + Damage.ToString() + " damage to " + Target.GetName() + "!";
-            return LogText;
+            logText = "Your Heroic Assault dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
+            return logText;
         }
 
-        public string Skill_DesperateStrike(Enemy Target)
+        public string Skill_DesperateStrike(Enemy target)
         {
             Random RNGesus = new Random();
-            int Damage;
-            string LogText;
+            int damage;
+            string logText;
 
-            Damage = RNGesus.Next(1, 21) + (Strength - 10);
-            Target.SetHealth(Target.GetHealth() - Damage);
+            damage = RNGesus.Next(1, 21) + (strength - 10);
+            target.SetHealth(target.GetHealth() - damage);
 
-            LogText = "Your Desperate Strike dealt " + Damage.ToString() + " damage to " + Target.GetName() + "!";
-            return LogText;
+            logText = "Your Desperate Strike dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
+            return logText;
         }
 
         public string Skill_Bash(Enemy target)
@@ -85,7 +85,7 @@ namespace GladiatorsGame
             string logText;
             bool effect;
 
-            damage = RNGesus.Next(4, 9) + (Strength - 10);
+            damage = RNGesus.Next(4, 9) + (strength - 10);
             effect = GameLogic.CheckChance(50);
             logText = "Your Bash dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -104,13 +104,13 @@ namespace GladiatorsGame
             return logText;
         }
 
-        public string Skill_DirtThrow(Enemy Target)
+        public string Skill_DirtThrow(Enemy target)
         {
             //NYI
             return null;
         }
 
-        public string Skill_SavageCut(Enemy Target)
+        public string Skill_SavageCut(Enemy target)
         {
             //NYI
             return null;
@@ -118,197 +118,197 @@ namespace GladiatorsGame
 
         public string LevelUp()
         {
-            string LogText, LogTextUnlock;
+            string logText, logTextUnlock;
 
-            Level = Level + 1;
-            FinishedLevelUp = false;
+            level = level + 1;
+            finishedLevelUp = false;
 
-            switch (Level)
+            switch (level)
             {
                 case 3:
-                    UnlockedSkill[2] = true;
-                    LogTextUnlock = " You have unlocked Bash.";
+                    unlockedSkill[2] = true;
+                    logTextUnlock = " You have unlocked Bash.";
                     break;
                 case 5:
-                    UnlockedSkill[3] = true;
-                    LogTextUnlock = " You have unlocked Dirt Throw.";
+                    unlockedSkill[3] = true;
+                    logTextUnlock = " You have unlocked Dirt Throw.";
                     break;
                 case 7:
-                    UnlockedSkill[4] = true;
-                    LogTextUnlock = " You have unlocked Savage Cut.";
+                    unlockedSkill[4] = true;
+                    logTextUnlock = " You have unlocked Savage Cut.";
                     break;
                 default:
-                    LogTextUnlock = "";
+                    logTextUnlock = "";
                     break;
             }
 
-            LogText = "You have reached level " + Level.ToString() + "!" + LogTextUnlock;
-            return LogText;
+            logText = "You have reached level " + level.ToString() + "!" + logTextUnlock;
+            return logText;
         }
 
         public string GetName()
         {
-            return Name;
+            return name;
         }
 
         public int GetLevel()
         {
-            return Level;
+            return level;
         }
 
         public int GetStrength()
         {
-            return Strength;
+            return strength;
         }
 
         public int GetAgility()
         {
-            return Agility;
+            return agility;
         }
 
         public int GetVitality()
         {
-            return Vitality;
+            return vitality;
         }
 
         public int GetHealth()
         {
-            return Health;
+            return health;
         }
 
         public int GetMaxHealth()
         {
-            return MaxHealth;
+            return maxHealth;
         }
 
         public int GetEnergy()
         {
-            return Energy;
+            return energy;
         }
 
         public int GetMaxEnergy()
         {
-            return MaxEnergy;
+            return maxEnergy;
         }
 
         public int GetStun()
         {
-            return Stun;
+            return stun;
         }
 
         public int GetBleed()
         {
-            return Bleed;
+            return bleed;
         }
 
         public int GetDaze()
         {
-            return Daze;
+            return daze;
         }
 
         public bool GetFinishedTurn()
         {
-            return FinishedTurn;
+            return finishedTurn;
         }
 
         public bool GetFinishedLevelUp()
         {
-            return FinishedLevelUp;
+            return finishedLevelUp;
         }
 
         public bool GetFinishedGame()
         {
-            return FinishedGame;
+            return finishedGame;
         }
 
         public bool[] GetUnlockedSkill()
         {
-            return UnlockedSkill;
+            return unlockedSkill;
         }
 
         public void SetName(string newName)
         {
-            Name = newName;
+            name = newName;
         }
 
         public void SetLevel(int newLevel)
         {
-            Level = newLevel;
+            level = newLevel;
         }
 
         public void SetStrength(int newStrength)
         {
-            Strength = newStrength;
+            strength = newStrength;
         }
 
         public void SetAgility(int newAgility)
         {
-            Agility = newAgility;
+            agility = newAgility;
         }
 
         public void SetVitality(int newVitality)
         {
-            Vitality = newVitality;
+            vitality = newVitality;
         }
 
         public void SetHealth(int newHealth)
         {
-            Health = newHealth;
+            health = newHealth;
 
-            if (Health > MaxHealth)
+            if (health > maxHealth)
             {
-                Health = MaxHealth;
+                health = maxHealth;
             }
         }
 
         public void SetMaxHealth(int newMaxHealth)
         {
-            MaxHealth = newMaxHealth;
+            maxHealth = newMaxHealth;
         }
 
         public void SetEnergy(int newEnergy)
         {
-            Energy = newEnergy;
+            energy = newEnergy;
         }
 
         public void SetMaxEnergy(int newMaxEnergy)
         {
-            MaxEnergy = newMaxEnergy;
+            maxEnergy = newMaxEnergy;
         }
 
         public void SetStun(int newStun)
         {
-            Stun = newStun;
+            stun = newStun;
         }
 
         public void SetBleed(int newBleed)
         {
-            Bleed = newBleed;
+            bleed = newBleed;
         }
 
         public void SetDaze(int newDaze)
         {
-            Daze = newDaze;
+            daze = newDaze;
         }
 
         public void SetFinishedTurn(bool newFinishedTurn)
         {
-            FinishedTurn = newFinishedTurn;
+            finishedTurn = newFinishedTurn;
         }
 
         public void SetFinishedLevelUp(bool newFinishedLevelUp)
         {
-            FinishedLevelUp = newFinishedLevelUp;
+            finishedLevelUp = newFinishedLevelUp;
         }
 
         public void SetFinishedGame(bool newFinishedGame)
         {
-            FinishedGame = newFinishedGame;
+            finishedGame = newFinishedGame;
         }
 
         public void SetUnlockSkill(int id, bool newState)
         {
-            UnlockedSkill[id] = newState;
+            unlockedSkill[id] = newState;
         }
     }
 }
