@@ -106,15 +106,41 @@ namespace GladiatorsGame
                         UpdateScreen();
                         System.Threading.Thread.Sleep(250);
 
-                        //Enemy reaction (attack or death)
+                        //Enemy reaction (attack or death, states)
                         if (currentEnemy.GetHealth() <= 0)
                         {
                             combatLog.WriteLine(currentEnemy.GetName() + " falls breathless before you.", ConsoleColor.Yellow);
                         }
                         else if (player1.GetFinishedTurn() == true)
                         {
-                            combatLog.WriteLine(currentEnemy.Attack(player1), ConsoleColor.Red);
+                            if (currentEnemy.GetStun() >= 1)
+                            {
+                                currentEnemy.SetStun(currentEnemy.GetStun() - 1);
+                                combatLog.WriteLine(currentEnemy.GetName() + " is stunned and skips a turn.", ConsoleColor.Red);
+                            }
+                            else
+                            {
+                                if (currentEnemy.GetDaze() >= 1)
+                                {
+                                    currentEnemy.SetDaze(currentEnemy.GetDaze() - 1);
+
+                                    if (GameLogic.CheckChance(50) == true)
+                                    {
+                                        combatLog.WriteLine(currentEnemy.GetName() + "'s attack missed you!", ConsoleColor.Red);
+                                    }
+                                    else
+                                    {
+                                        combatLog.WriteLine(currentEnemy.Attack(player1), ConsoleColor.Red);
+                                    }   
+                                }
+                                else
+                                {
+                                    combatLog.WriteLine(currentEnemy.Attack(player1), ConsoleColor.Red);
+                                }      
+                            }
+                            
                         }
+
                     } while ((currentEnemy.GetHealth() >= 1) && (player1.GetHealth() >= 1));
 
                     if (player1.GetLevel() == 100)

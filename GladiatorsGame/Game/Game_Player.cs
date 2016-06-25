@@ -106,8 +106,26 @@ namespace GladiatorsGame
 
         public string Skill_DirtThrow(Enemy target)
         {
-            //NYI
-            return null;
+            Random RNGesus = new Random();
+            int damage;
+            string logText;
+            bool effect;
+
+            damage = RNGesus.Next(2, 5);
+            effect = GameLogic.CheckChance(50);
+            logText = "Your Dirt Throw dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
+
+            if (effect == true)
+            {
+                target.SetDaze(3);
+                logText = logText + target.GetName() + " is dizzy.";
+            }
+            else
+            {
+                logText = logText + target.GetName() + " resisted daze.";
+            }
+
+            return logText;
         }
 
         public string Skill_SavageCut(Enemy target)
