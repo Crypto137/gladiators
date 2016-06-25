@@ -10,7 +10,7 @@ namespace GladiatorsGame
     {
         public static void DrawTitle()
         {
-            Console.WriteLine("Gladiators (Prototype) - Version 1.0");
+            Console.WriteLine("Gladiators - Version 1.0");
         }
 
         public static void DrawHorizontalLine()

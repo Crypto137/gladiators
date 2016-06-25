@@ -7,8 +7,8 @@
     <ProjectGuid>{CACFDE8A-A77D-4B6C-80A2-CAB1F4F716E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GladiatorsGame</RootNamespace>
-    <AssemblyName>GladiatorsGame</AssemblyName>
+    <RootNamespace>Gladiators</RootNamespace>
+    <AssemblyName>Gladiators</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

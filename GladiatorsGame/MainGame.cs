@@ -14,7 +14,7 @@ namespace GladiatorsGame
 
         static void Main()
         {
-            Console.Title = "Gladiators (Prototype)";
+            Console.Title = "Gladiators";
 
             //Main game loop
             while (true)
