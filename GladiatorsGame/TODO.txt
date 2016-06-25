@@ -1,0 +1,18 @@
+﻿TODO:
+ - [DONE] Implement title screen
+ - [DONE] Fix Random
+ - [DONE] Implement turns (and fix enemy attack on incorrect player input)
+ - [DONE] Implement random chance check (percentage)
+ - [DONE] Add color coding for combat log
+ - [DONE] Implement stat upgrades on level up
+ - [DONE] Implement skill unlock on levels 3, 5 and 7
+ - [DONE] Implement skill scaling with strength
+ - [DONE] Implement ending after level 100
+ - [DONE] Fix variable names.
+ - [DONE] Implement additional skills (+ states)
+ - Implement skill costs
+ - Implement enemy scaling
+ - Implement enemy affixes
+ - Write tutorial for title screen
+ - Add multiple death strings for enemies.
+ - Implement proper pauses with timers, not Threading.Sleep
