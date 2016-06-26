@@ -51,9 +51,7 @@ namespace GladiatorsGame
                     break;
             }
 
-            level = 1;
-
-            maxHealth = rnd.Next(95, 106);
+            maxHealth = rnd.Next(95, 106) + (level - 1) * rnd.Next(4, 7);
             health = maxHealth;
 
             stun = 0;
