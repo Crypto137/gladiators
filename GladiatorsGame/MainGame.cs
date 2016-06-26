@@ -46,37 +46,42 @@ namespace GladiatorsGame
                         switch (GetPlayerInput())
                         {
                             case "D1":
-                                if (player1.GetUnlockedSkill()[0] == true)
+                                if (player1.GetUnlockedSkill()[0] == true && player1.GetEnergy() >= player1.GetSkillCost()[0])
                                 {
                                     combatLog.WriteLine(player1.Skill_HeroicAssault(currentEnemy), ConsoleColor.Green);
+                                    player1.SetEnergy(player1.GetEnergy() - player1.GetSkillCost()[0]);
                                     player1.SetFinishedTurn(true);
                                 }
                                 break;
                             case "D2":
-                                if (player1.GetUnlockedSkill()[1] == true)
+                                if (player1.GetUnlockedSkill()[1] == true && player1.GetEnergy() >= player1.GetSkillCost()[1])
                                 {
                                     combatLog.WriteLine(player1.Skill_DesperateStrike(currentEnemy), ConsoleColor.Green);
+                                    player1.SetEnergy(player1.GetEnergy() - player1.GetSkillCost()[1]);
                                     player1.SetFinishedTurn(true);
                                 }
                                 break;
                             case "D3":
-                                if (player1.GetUnlockedSkill()[2] == true)
+                                if (player1.GetUnlockedSkill()[2] == true && player1.GetEnergy() >= player1.GetSkillCost()[2])
                                 {
                                     combatLog.WriteLine(player1.Skill_Bash(currentEnemy), ConsoleColor.Green);
+                                    player1.SetEnergy(player1.GetEnergy() - player1.GetSkillCost()[2]);
                                     player1.SetFinishedTurn(true);
                                 }
                                 break;
                             case "D4":
-                                if (player1.GetUnlockedSkill()[3] == true)
+                                if (player1.GetUnlockedSkill()[3] == true && player1.GetEnergy() >= player1.GetSkillCost()[3])
                                 {
                                     combatLog.WriteLine(player1.Skill_DirtThrow(currentEnemy), ConsoleColor.Green);
+                                    player1.SetEnergy(player1.GetEnergy() - player1.GetSkillCost()[3]);
                                     player1.SetFinishedTurn(true);
                                 }
                                 break;
                             case "D5":
-                                if (player1.GetUnlockedSkill()[4] == true)
+                                if (player1.GetUnlockedSkill()[4] == true && player1.GetEnergy() >= player1.GetSkillCost()[4])
                                 {
                                     combatLog.WriteLine(player1.Skill_SavageCut(currentEnemy), ConsoleColor.Green);
+                                    player1.SetEnergy(player1.GetEnergy() - player1.GetSkillCost()[4]);
                                     player1.SetFinishedTurn(true);
                                 }
                                 break;
@@ -127,7 +132,7 @@ namespace GladiatorsGame
                             
                         }
 
-                    } while ((currentEnemy.GetHealth() >= 1) && (player1.GetHealth() >= 1));
+                    } while ((currentEnemy.GetHealth() >= 1 && player1.GetHealth() >= 1));
 
                     if (player1.GetLevel() == 100)
                     {
@@ -193,7 +198,7 @@ namespace GladiatorsGame
             UserInterface.DrawHorizontalLine();            
             UserInterface.DrawPlayerInfo(player1.GetName(), player1.GetLevel(), player1.GetStrength(), player1.GetAgility(), player1.GetVitality(), player1.GetHealth(), player1.GetMaxHealth(), player1.GetEnergy(), player1.GetMaxEnergy(), player1.GetStun(), player1.GetBleed(), player1.GetDaze());
             UserInterface.DrawHorizontalLine();
-            UserInterface.DrawSkillBar(player1.GetUnlockedSkill());
+            UserInterface.DrawSkillBar(player1.GetUnlockedSkill(), player1.GetSkillCost());
             UserInterface.DrawHorizontalLine();
         }
 

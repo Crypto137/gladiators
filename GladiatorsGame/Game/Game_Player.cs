@@ -13,6 +13,7 @@ namespace GladiatorsGame
         private int stun, bleed, daze;
         private bool finishedTurn, finishedLevelUp, finishedGame;
         private bool[] unlockedSkill = new bool[5];
+        private int[] skillCost = new int[5];
 
         public void Initialize()
         {
@@ -42,6 +43,12 @@ namespace GladiatorsGame
             unlockedSkill[2] = false;
             unlockedSkill[3] = false;
             unlockedSkill[4] = false;
+
+            skillCost[0] = 0;
+            skillCost[1] = 0;
+            skillCost[2] = 20;
+            skillCost[3] = 20;
+            skillCost[4] = 20;
         }
 
         public void UpdateStats()
@@ -263,6 +270,11 @@ namespace GladiatorsGame
             return unlockedSkill;
         }
 
+        public int[] GetSkillCost()
+        {
+            return skillCost;
+        }
+
         public void SetName(string newName)
         {
             name = newName;
@@ -346,6 +358,11 @@ namespace GladiatorsGame
         public void SetUnlockSkill(int id, bool newState)
         {
             unlockedSkill[id] = newState;
+        }
+
+        public void SetSkillCost(int id, int newCost)
+        {
+            skillCost[id] = newCost;
         }
     }
 }

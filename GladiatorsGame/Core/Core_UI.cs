@@ -85,9 +85,9 @@ namespace GladiatorsGame
             }
         }
 
-        public static void DrawSkillBar(bool[] unlockedSkill)
+        public static void DrawSkillBar(bool[] unlockedSkill, int[] skillCost)
         {
-            string[] skillText = new string[5] { "1. Heroic Assault (0)", "2. Desperate Strike (0)", "3. Bash (0)", "4. Dirt Throw (0)", "5. Savage Cut (0)" };
+            string[] skillText = new string[5] { "1. Heroic Assault (" + skillCost[0].ToString() + ")", "2. Desperate Strike (" + skillCost[1].ToString() + ")", "3. Bash (" + skillCost[2].ToString() + ")", "4. Dirt Throw (" + skillCost[3].ToString() + ")", "5. Savage Cut (" + skillCost[4].ToString() + ")" };
             Console.WriteLine("Available Skills:");
             for (int i = 0; i <= 4; i++)
             {
