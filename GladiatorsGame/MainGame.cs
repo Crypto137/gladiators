@@ -198,7 +198,7 @@ namespace GladiatorsGame
             UserInterface.DrawHorizontalLine();            
             UserInterface.DrawPlayerInfo(player1.GetName(), player1.GetLevel(), player1.GetStrength(), player1.GetAgility(), player1.GetVitality(), player1.GetHealth(), player1.GetMaxHealth(), player1.GetEnergy(), player1.GetMaxEnergy(), player1.GetStun(), player1.GetBleed(), player1.GetDaze());
             UserInterface.DrawHorizontalLine();
-            UserInterface.DrawSkillBar(player1.GetUnlockedSkill(), player1.GetSkillCost());
+            UserInterface.DrawSkillBar(player1.GetUnlockedSkill(), player1.GetSkillCost(), player1.GetStrength());
             UserInterface.DrawHorizontalLine();
         }
 

@@ -85,9 +85,16 @@ namespace GladiatorsGame
             }
         }
 
-        public static void DrawSkillBar(bool[] unlockedSkill, int[] skillCost)
+        public static void DrawSkillBar(bool[] unlockedSkill, int[] skillCost, int playerStrength)
         {
-            string[] skillText = new string[5] { "1. Heroic Assault (" + skillCost[0].ToString() + ")", "2. Desperate Strike (" + skillCost[1].ToString() + ")", "3. Bash (" + skillCost[2].ToString() + ")", "4. Dirt Throw (" + skillCost[3].ToString() + ")", "5. Savage Cut (" + skillCost[4].ToString() + ")" };
+            string[] skillText = new string[5];
+
+            skillText[0] = "1. Heroic Assault [" + (8 + playerStrength - 10).ToString() + "-" + (12 + playerStrength - 10).ToString() + "] - " + skillCost[0].ToString() + "E";
+            skillText[1] = "2. Desperate Strike [" + (1 + playerStrength - 10).ToString() + "-" + (20 + playerStrength - 10).ToString() + "] - " + skillCost[1].ToString() + "E";
+            skillText[2] = "3. Bash [" + (2).ToString() + "-" + (4).ToString() + ", 50% STUN] - " + skillCost[2].ToString() + "E";
+            skillText[3] = "4. Dirt Throw [" + (2).ToString() + "-" + (4).ToString() + ", 50% DAZE] - " + skillCost[3].ToString() + "E";
+            skillText[4] = "5. Savage Cut [" + (0).ToString() + "-" + (0).ToString() + ", 50% BLEED (" + (1 + playerStrength - 10).ToString() + ")] - " + skillCost[4].ToString() + "E";
+
             Console.WriteLine("Available Skills:");
             for (int i = 0; i <= 4; i++)
             {
