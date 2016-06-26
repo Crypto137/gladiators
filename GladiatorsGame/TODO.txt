@@ -11,9 +11,10 @@
  - [DONE] Fix variable names.
  - [DONE] Implement additional skills (+ states)
  - [DONE] Implement skill costs
- - Add damage numbers to the skill panel
+ - [DONE] Add damage numbers to the skill panel
  - Implement enemy scaling
  - Implement enemy affixes
  - Write tutorial for title screen
  - Add multiple death strings for enemies.
  - Implement proper pauses with timers, not Threading.Sleep
+ - fix bug where holding down button makes the game play itself
