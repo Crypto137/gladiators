@@ -10,7 +10,8 @@
  - [DONE] Implement ending after level 100
  - [DONE] Fix variable names.
  - [DONE] Implement additional skills (+ states)
- - Implement skill costs
+ - [DONE] Implement skill costs
+ - Add damage numbers to the skill panel
  - Implement enemy scaling
  - Implement enemy affixes
  - Write tutorial for title screen
