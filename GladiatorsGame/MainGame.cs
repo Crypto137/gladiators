@@ -34,7 +34,7 @@ namespace GladiatorsGame
                 //Gameplay Session Loop
                 do
                 {
-                    currentEnemy.Generate();
+                    currentEnemy.Generate(player1.GetLevel());
                     combatLog.WriteLine("You are now fighting " + currentEnemy.GetName() + ".", ConsoleColor.Yellow);
 
                     do

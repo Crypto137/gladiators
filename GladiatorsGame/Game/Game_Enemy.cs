@@ -12,7 +12,7 @@ namespace GladiatorsGame
         private int level, health, maxHealth;
         private int stun, bleed, bleedDamage, daze;
 
-        public void Generate()
+        public void Generate(int level)
         {
             Random rnd = new Random();
             int nameID = rnd.Next(0, 10);
