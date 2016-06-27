@@ -12,7 +12,8 @@
  - [DONE] Implement additional skills (+ states)
  - [DONE] Implement skill costs
  - [DONE] Add damage numbers to the skill panel
- - Implement enemy scaling
+ - [DONE] Implement enemy scaling
+ - fix random
  - Implement enemy affixes
  - Write tutorial for title screen
  - Add multiple death strings for enemies.
