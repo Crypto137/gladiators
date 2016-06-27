@@ -12,6 +12,10 @@ namespace GladiatorsGame
         private int level, health, maxHealth;
         private int stun, bleed, bleedDamage, daze;
 
+        private int prefixID, suffixID;
+        private string[] prefixName, suffixName;
+        private int healthModifier, damageModifier;
+
         public void Generate(int level)
         {
             Random rnd = new Random();
