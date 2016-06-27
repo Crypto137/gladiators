@@ -36,6 +36,18 @@ namespace GladiatorsGame
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
 
+            if (prefixID != 0)
+            {
+                healthModifier = healthModifier + 10;
+                damageModifier = damageModifier + 1;
+            }
+
+            if (suffixID != 0)
+            {
+                healthModifier = healthModifier + 10;
+                damageModifier = damageModifier + 1;
+            }
+
             maxHealth = rnd.Next(95, 106) + healthModifier;
             health = maxHealth;
 
