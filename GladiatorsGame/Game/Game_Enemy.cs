@@ -33,7 +33,10 @@ namespace GladiatorsGame
 
             name = InitializeName();
 
-            maxHealth = rnd.Next(95, 106) + (level - 1) * rnd.Next(4, 7);
+            healthModifier = (level - 1) * rnd.Next(4, 7);
+            damageModifier = 0;
+
+            maxHealth = rnd.Next(95, 106) + healthModifier;
             health = maxHealth;
 
             stun = 0;
@@ -48,7 +51,7 @@ namespace GladiatorsGame
             int damage;
             string logText;
 
-            damage = rnd.Next(8, 13);
+            damage = rnd.Next(8, 13) + damageModifier;
             Target.SetHealth(Target.GetHealth() - damage);
 
             logText = name + " attacked you for " + damage.ToString() + " damage.";
