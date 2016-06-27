@@ -24,13 +24,19 @@ namespace GladiatorsGame
             if (GameLogic.CheckChance(level) == true)
             {
                 prefixID = rnd.Next(1, 4);
-                suffixID = 0;
             }
-
-            if (prefixID == 0 && GameLogic.CheckChance(level) == true)
+            else
             {
                 prefixID = 0;
+            }
+
+            if (GameLogic.CheckChance(level) == true)
+            {
                 suffixID = rnd.Next(1, 4);
+            }
+            else
+            {
+                suffixID = 0;
             }
 
             name = InitializeName();
