@@ -12,48 +12,44 @@ namespace GladiatorsGame
         private int level, health, maxHealth;
         private int stun, bleed, bleedDamage, daze;
 
+        private int baseNameID, prefixID, suffixID;
+        private int healthModifier, damageModifier;
+
         public void Generate(int level)
         {
             Random rnd = new Random();
-            int nameID = rnd.Next(0, 10);
+            baseNameID = rnd.Next(0, 10);
 
-            switch (nameID)
+            if (GameLogic.CheckChance(level) == true)
             {
-                case 0:
-                    name = "Gladiator";
-                    break;
-                case 1:
-                    name = "Prisoner";
-                    break;
-                case 2:
-                    name = "Criminal";
-                    break;
-                case 3:
-                    name = "Barbarian";
-                    break;
-                case 4:
-                    name = "Duelist";
-                    break;
-                case 5:
-                    name = "Lion";
-                    break;
-                case 6:
-                    name = "Tiger";
-                    break;
-                case 7:
-                    name = "Panther";
-                    break;
-                case 8:
-                    name = "Bull";
-                    break;
-                case 9:
-                    name = "Bear";
-                    break;
+                prefixID = rnd.Next(1, 4);
+                suffixID = 0;
             }
 
-            level = 1;
+            if (prefixID == 0 && GameLogic.CheckChance(level) == true)
+            {
+                prefixID = 0;
+                suffixID = rnd.Next(1, 4);
+            }
 
-            maxHealth = rnd.Next(95, 106);
+            name = InitializeName();
+
+            healthModifier = (level - 1) * rnd.Next(4, 7);
+            damageModifier = 0;
+
+            if (prefixID != 0)
+            {
+                healthModifier = healthModifier + 10;
+                damageModifier = damageModifier + 1;
+            }
+
+            if (suffixID != 0)
+            {
+                healthModifier = healthModifier + 10;
+                damageModifier = damageModifier + 1;
+            }
+
+            maxHealth = rnd.Next(95, 106) + healthModifier;
             health = maxHealth;
 
             stun = 0;
@@ -68,11 +64,48 @@ namespace GladiatorsGame
             int damage;
             string logText;
 
-            damage = rnd.Next(8, 13);
+            damage = rnd.Next(8, 13) + damageModifier;
             Target.SetHealth(Target.GetHealth() - damage);
 
             logText = name + " attacked you for " + damage.ToString() + " damage.";
             return logText;
+        }
+
+        public string InitializeName()
+        {
+            string[] nameBase = new string[10];
+            string[] namePrefix = new string[6];
+            string[] nameSuffix = new string[6];
+            string finalName;
+
+            nameBase[0] = "Gladiator";
+            nameBase[1] = "Prisoner";
+            nameBase[2] = "Criminal";
+            nameBase[3] = "Barbarian";
+            nameBase[4] = "Duelist";
+            nameBase[5] = "Lion";
+            nameBase[6] = "Tiger";
+            nameBase[7] = "Panther";
+            nameBase[8] = "Bull";
+            nameBase[9] = "Bear";
+
+            namePrefix[0] = "";
+            namePrefix[1] = "Savage ";
+            namePrefix[2] = "Wild ";
+            namePrefix[3] = "Ruthless ";
+            namePrefix[4] = "Unstoppable ";
+            namePrefix[5] = "Insane ";
+
+            nameSuffix[0] = "";
+            nameSuffix[1] = " from the Depths";
+            nameSuffix[2] = " the Untamed";
+            nameSuffix[3] = " of the Night";
+            nameSuffix[4] = " the Kingslayer";
+            nameSuffix[5] = ", Blessed by the Gods";
+
+            finalName = namePrefix[prefixID] + nameBase[baseNameID] + nameSuffix[suffixID];
+
+            return finalName;
         }
 
         public string GetName()
