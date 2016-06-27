@@ -77,6 +77,19 @@ namespace GladiatorsGame
             return logText;
         }
 
+        public void InitializeAffixes()
+        {
+            prefixName[0] = "";
+            prefixName[1] = "Savage ";
+            prefixName[2] = "Wild ";
+            prefixName[3] = "Ruthless ";
+
+            suffixName[0] = "";
+            suffixName[1] = " from the Depths";
+            suffixName[2] = " the Untamed";
+            suffixName[3] = " of the Night";
+        }
+
         public string GetName()
         {
             return name;
