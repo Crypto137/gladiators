@@ -8,6 +8,8 @@ namespace GladiatorsGame
 {
     class Enemy
     {
+        private static Random rnd = new Random();
+
         private string name;
         private int level, health, maxHealth;
         private int stun, bleed, bleedDamage, daze;
@@ -17,7 +19,6 @@ namespace GladiatorsGame
 
         public void Generate(int level)
         {
-            Random rnd = new Random();
             baseNameID = rnd.Next(0, 10);
 
             if (GameLogic.CheckChance(level) == true)
@@ -60,7 +61,6 @@ namespace GladiatorsGame
 
         public string Attack(Player Target)
         {
-            Random rnd = new Random();
             int damage;
             string logText;
 

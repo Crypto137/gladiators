@@ -8,11 +8,12 @@ namespace GladiatorsGame
 {
     class GameLogic
     {
+        private static Random rnd = new Random();
+
         public static bool CheckChance(int chance)
         {
             int chanceRoll;
             bool chanceResult;
-            Random rnd = new Random();
 
             chanceRoll = rnd.Next(0, 101);
 

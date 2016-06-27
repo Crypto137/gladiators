@@ -8,6 +8,8 @@ namespace GladiatorsGame
 {
     class Player
     {
+        private static Random rnd = new Random();
+
         private string name;
         private int level, strength, agility, vitality, health, maxHealth, energy, maxEnergy;
         private int stun, bleed, daze;
@@ -61,7 +63,6 @@ namespace GladiatorsGame
 
         public string Skill_HeroicAssault(Enemy target)
         {
-            Random rnd = new Random();
             int damage;
             string logText;
 
@@ -74,7 +75,6 @@ namespace GladiatorsGame
 
         public string Skill_DesperateStrike(Enemy target)
         {
-            Random rnd = new Random();
             int damage;
             string logText;
 
@@ -87,7 +87,6 @@ namespace GladiatorsGame
 
         public string Skill_Bash(Enemy target)
         {
-            Random rnd = new Random();
             int damage;
             string logText;
             bool effect;
@@ -113,7 +112,6 @@ namespace GladiatorsGame
 
         public string Skill_DirtThrow(Enemy target)
         {
-            Random rnd = new Random();
             int damage;
             string logText;
             bool effect;
