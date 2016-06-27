@@ -61,8 +61,8 @@ namespace GladiatorsGame
         public string InitializeName()
         {
             string[] nameBase = new string[10];
-            string[] namePrefix = new string[4];
-            string[] nameSuffix = new string[4];
+            string[] namePrefix = new string[6];
+            string[] nameSuffix = new string[6];
             string finalName;
 
             nameBase[0] = "Gladiator";
@@ -80,11 +80,15 @@ namespace GladiatorsGame
             namePrefix[1] = "Savage ";
             namePrefix[2] = "Wild ";
             namePrefix[3] = "Ruthless ";
+            namePrefix[4] = "Unstoppable ";
+            namePrefix[5] = "Insane ";
 
             nameSuffix[0] = "";
             nameSuffix[1] = " from the Depths";
             nameSuffix[2] = " the Untamed";
             nameSuffix[3] = " of the Night";
+            nameSuffix[4] = " the Kingslayer";
+            nameSuffix[5] = ", Blessed by the Gods";
 
             finalName = namePrefix[prefixID] + nameBase[baseNameID] + nameSuffix[suffixID];
 
