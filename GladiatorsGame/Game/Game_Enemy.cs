@@ -114,6 +114,35 @@ namespace GladiatorsGame
             return finalName;
         }
 
+        public string GetDeathText()
+        {
+            int deathTextID;
+            string deathText;
+
+            deathTextID = rnd.Next(0, 4);
+
+            switch (deathTextID)
+            {
+                case 0:
+                    deathText = name + " falls breathless before you";
+                    break;
+                case 1:
+                    deathText = name + " is defeated!";
+                    break;
+                case 2:
+                    deathText = name + " yields. You are victorious!";
+                    break;
+                case 3:
+                    deathText = name + " bleeds out. You have won!";
+                    break;
+                default:
+                    deathText = name + " is dead.";
+                    break;
+            }
+
+            return deathText;
+        }
+
         public string GetName()
         {
             return name;

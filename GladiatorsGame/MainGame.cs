@@ -102,7 +102,7 @@ namespace GladiatorsGame
 
                         if (currentEnemy.GetHealth() <= 0)
                         {
-                            combatLog.WriteLine(currentEnemy.GetName() + " falls breathless before you.", ConsoleColor.Yellow);
+                            combatLog.WriteLine(currentEnemy.GetDeathText(), ConsoleColor.Yellow);
                         }
                         else if (player1.GetFinishedTurn() == true)
                         {
