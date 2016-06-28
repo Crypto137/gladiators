@@ -23,6 +23,7 @@ namespace GladiatorsGame
                 Console.Clear();
                 UserInterface.DrawHorizontalLine();
                 UserInterface.DrawTitle();
+                UserInterface.DrawCopyright();
                 UserInterface.DrawHorizontalLine();
                 UserInterface.DrawTutorial();
                 UserInterface.DrawHorizontalLine();

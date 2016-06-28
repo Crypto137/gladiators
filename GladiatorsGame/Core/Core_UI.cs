@@ -25,6 +25,11 @@ namespace GladiatorsGame
             Console.WriteLine(" - There are no saves or continues: if you die, you die.");
         }
 
+        public static void DrawCopyright()
+        {
+            Console.WriteLine("Copyright (c) 2016 Thunderstruck Games. All rights reserved");
+        }
+
         public static void DrawHorizontalLine()
         {
             Console.WriteLine("----------------------------------------------------------------");
