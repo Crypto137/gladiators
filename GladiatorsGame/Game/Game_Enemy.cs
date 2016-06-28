@@ -114,6 +114,35 @@ namespace GladiatorsGame
             return finalName;
         }
 
+        public string GetEntranceText()
+        {
+            int entranceTextID;
+            string entranceText;
+
+            entranceTextID = rnd.Next(0, 4);
+
+            switch (entranceTextID)
+            {
+                case 0:
+                    entranceText = "You are now fighting " + name + ".";
+                    break;
+                case 1:
+                    entranceText = name + " has entered the Arena.";
+                    break;
+                case 2:
+                    entranceText = name + " will be your next opponent!";
+                    break;
+                case 3:
+                    entranceText = "Looks like " + name + " wants to challenge you!";
+                    break;
+                default:
+                    entranceText = name + " is your enemy";
+                    break;
+            }
+
+            return entranceText;
+        }
+
         public string GetDeathText()
         {
             int deathTextID;
@@ -124,7 +153,7 @@ namespace GladiatorsGame
             switch (deathTextID)
             {
                 case 0:
-                    deathText = name + " falls breathless before you";
+                    deathText = name + " falls breathless before you.";
                     break;
                 case 1:
                     deathText = name + " is defeated!";
