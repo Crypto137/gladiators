@@ -24,6 +24,8 @@ namespace GladiatorsGame
                 UserInterface.DrawHorizontalLine();
                 UserInterface.DrawTitle();
                 UserInterface.DrawHorizontalLine();
+                UserInterface.DrawTutorial();
+                UserInterface.DrawHorizontalLine();
                 Console.WriteLine("Press any key to start the game.");
                 Console.ReadKey();
 

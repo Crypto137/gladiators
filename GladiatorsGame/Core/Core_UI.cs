@@ -13,6 +13,18 @@ namespace GladiatorsGame
             Console.WriteLine("Gladiators - Version 1.0");
         }
 
+        public static void DrawTutorial()
+        {
+            Console.WriteLine(" - There are 100 random enemies you have to defeat to beat the game.");
+            Console.WriteLine(" - You level up after defeating each enemy.");
+            Console.WriteLine(" - During level up you can select which stat to improve.");
+            Console.WriteLine(" - Strength affects your damage, Agility - energy, Vitality - health.");
+            Console.WriteLine(" - Use number keys (1, 2, 3, 4, 5) to use skills.");
+            Console.WriteLine(" - Some skills are only unlocked at certain levels.");
+            Console.WriteLine(" - Special skills require energy to be used.");
+            Console.WriteLine(" - There are no saves or continues: if you die, you die.");
+        }
+
         public static void DrawHorizontalLine()
         {
             Console.WriteLine("----------------------------------------------------------------");

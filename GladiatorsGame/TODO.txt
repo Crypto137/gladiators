@@ -12,7 +12,7 @@
  - [DONE] Add damage numbers to the skill panel
  - [DONE] Implement enemy scaling
  - Implement enemy affixes
- - Write tutorial for title screen
+ - [DONE] Write tutorial for title screen
  - Add multiple death strings for enemies
 
 Bugs:
