@@ -14,7 +14,7 @@
  - Implement enemy affixes
  - [DONE] Write tutorial for title screen
  - [DONE] Add multiple death strings for enemies
- - Add multiple entrance strings for enemies
+ - [DONE] Add multiple entrance strings for enemies
 
 Bugs:
  - [DONE] Fix Random
