@@ -11,7 +11,7 @@ namespace GladiatorsGame
         private static Random rnd = new Random();
 
         private string name;
-        private int level, strength, agility, vitality, health, maxHealth, energy, maxEnergy;
+        private int level, turnCount, strength, agility, vitality, health, maxHealth, energy, maxEnergy;
         private int stun, bleed, daze;
         private bool finishedTurn, finishedLevelUp, finishedGame;
         private bool[] unlockedSkill = new bool[5];
@@ -22,6 +22,7 @@ namespace GladiatorsGame
             name = "Maximus";
 
             level = 1;
+            turnCount = 1;
 
             strength = 10;
             agility = 10;
@@ -55,6 +56,7 @@ namespace GladiatorsGame
 
         public void UpdateStats()
         {
+            turnCount = 1;
             maxHealth = vitality * 10;
             health = maxHealth;
             maxEnergy = agility * 10;
@@ -68,8 +70,10 @@ namespace GladiatorsGame
 
             damage = rnd.Next(8, 13) + (strength - 10);
             target.SetHealth(target.GetHealth() - damage);
+            turnCount = turnCount + 1;
 
             logText = "Your Heroic Assault dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
+            turnCount = turnCount + 1;
             return logText;
         }
 
@@ -80,6 +84,7 @@ namespace GladiatorsGame
 
             damage = rnd.Next(1, 21) + (strength - 10);
             target.SetHealth(target.GetHealth() - damage);
+            turnCount = turnCount + 1;
 
             logText = "Your Desperate Strike dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
             return logText;
@@ -106,7 +111,9 @@ namespace GladiatorsGame
             {
                 logText = logText + target.GetName() + " resisted stun.";
             }
-            
+
+            turnCount = turnCount + 1;
+
             return logText;
         }
 
@@ -132,6 +139,8 @@ namespace GladiatorsGame
                 logText = logText + target.GetName() + " resisted daze.";
             }
 
+            turnCount = turnCount + 1;
+
             return logText;
         }
 
@@ -154,6 +163,8 @@ namespace GladiatorsGame
             {
                 logText = target.GetName() + " evaded your Savage Cut.";
             }
+
+            turnCount = turnCount + 1;
 
             return logText;
         }

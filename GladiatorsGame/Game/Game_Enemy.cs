@@ -11,7 +11,7 @@ namespace GladiatorsGame
         private static Random rnd = new Random();
 
         private string name;
-        private int level, health, maxHealth;
+        private int level, turnCount, health, maxHealth;
         private int stun, bleed, bleedDamage, daze;
 
         private int baseNameID, prefixID, suffixID;
@@ -56,6 +56,7 @@ namespace GladiatorsGame
                 damageModifier = damageModifier + 1;
             }
 
+            turnCount = 1;
             maxHealth = rnd.Next(95, 106) + healthModifier;
             health = maxHealth;
 
@@ -72,6 +73,7 @@ namespace GladiatorsGame
 
             damage = rnd.Next(8, 13) + damageModifier;
             Target.SetHealth(Target.GetHealth() - damage);
+            turnCount = turnCount + 1;
 
             logText = name + " attacked you for " + damage.ToString() + " damage.";
             return logText;
