@@ -23,7 +23,7 @@ namespace GladiatorsGame
 
             if (GameLogic.CheckChance(level) == true)
             {
-                prefixID = rnd.Next(1, 4);
+                prefixID = rnd.Next(1, 12);
             }
             else
             {
@@ -32,7 +32,7 @@ namespace GladiatorsGame
 
             if (GameLogic.CheckChance(level) == true)
             {
-                suffixID = rnd.Next(1, 4);
+                suffixID = rnd.Next(1, 12);
             }
             else
             {
@@ -82,8 +82,8 @@ namespace GladiatorsGame
         public string InitializeName()
         {
             string[] nameBase = new string[10];
-            string[] namePrefix = new string[6];
-            string[] nameSuffix = new string[6];
+            string[] namePrefix = new string[11];
+            string[] nameSuffix = new string[11];
             string finalName;
 
             nameBase[0] = "Gladiator";
@@ -98,18 +98,28 @@ namespace GladiatorsGame
             nameBase[9] = "Bear";
 
             namePrefix[0] = "";
-            namePrefix[1] = "Savage ";
-            namePrefix[2] = "Wild ";
-            namePrefix[3] = "Ruthless ";
-            namePrefix[4] = "Unstoppable ";
-            namePrefix[5] = "Insane ";
+            namePrefix[1] = "Bleeding ";
+            namePrefix[2] = "Savage ";
+            namePrefix[3] = "Wild ";
+            namePrefix[4] = "Ruthless ";
+            namePrefix[5] = "Unstoppable ";
+            namePrefix[6] = "Reckless ";
+            namePrefix[7] = "Lazy ";
+            namePrefix[8] = "Immortal";
+            namePrefix[9] = "Ironbound";
+            namePrefix[10] = "Invincible";
 
             nameSuffix[0] = "";
-            nameSuffix[1] = " from the Depths";
-            nameSuffix[2] = " the Untamed";
-            nameSuffix[3] = " of the Night";
-            nameSuffix[4] = " the Kingslayer";
-            nameSuffix[5] = ", Blessed by the Gods";
+            nameSuffix[1] = " of the Night";
+            nameSuffix[2] = " of the Dusk";
+            nameSuffix[3] = " of the Dawn";
+            nameSuffix[4] = " the Untamed";
+            nameSuffix[5] = " the Kingslayer";
+            nameSuffix[6] = " the Insane";
+            nameSuffix[7] = " from the Depths";
+            nameSuffix[8] = " from the Mountains";
+            nameSuffix[9] = " from the Abyss";
+            nameSuffix[10] = ", Blessed by the Gods";
 
             finalName = namePrefix[prefixID] + nameBase[baseNameID] + nameSuffix[suffixID];
 
