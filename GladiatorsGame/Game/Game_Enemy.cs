@@ -12,6 +12,7 @@ namespace GladiatorsGame
 
         private string name;
         private int level, turnCount, health, maxHealth;
+        private int baseMinDamage, baseMaxDamage;
         private int stun, bleed, bleedDamage, daze;
 
         private int baseNameID, prefixID, suffixID;
@@ -40,6 +41,9 @@ namespace GladiatorsGame
             }
 
             name = InitializeName();
+
+            baseMinDamage = 8;
+            baseMaxDamage = 12;
 
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
@@ -71,7 +75,7 @@ namespace GladiatorsGame
             int damage;
             string logText;
 
-            damage = rnd.Next(8, 13) + damageModifier;
+            damage = rnd.Next(baseMinDamage, baseMaxDamage + 1) + damageModifier;
             Target.SetHealth(Target.GetHealth() - damage);
             turnCount = turnCount + 1;
 
