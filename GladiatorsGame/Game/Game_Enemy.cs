@@ -95,8 +95,35 @@ namespace GladiatorsGame
 
             switch (suffixID)
             {
-                default:
-                    //do nothing
+                case 1:
+                    //of the Night - NYI: get +5 damage after turn 6;
+                    break;
+                case 2:
+                    //of the Dusk - NYI: -10 damage modifier, get damage every turn
+                    break;
+                case 3:
+                    //of the Dawn - NYI: +10 damage modifier, lose damage every turn
+                    break;
+                case 4:
+                    //the Untamed - NYI: deals more damage when less health
+                    break;
+                case 5:
+                    //the Kingslayer - NYI: +1 hp for every player level
+                    break;
+                case 6:
+                    //the Insane - NYI: 20% chance to attack self
+                    break;
+                case 7:
+                    //from the Depths - NYI: no damage range (always average)
+                    break;
+                case 8:
+                    //from the Mountains - NYI: no damage range (always min)
+                    break;
+                case 9:
+                    //from the Abyss - NYI: no damage range (always max)
+                    break;
+                case 10:
+                    //Blessed by the Gods - +healthmodifier, +damagemodifier
                     break;
             }
         }
