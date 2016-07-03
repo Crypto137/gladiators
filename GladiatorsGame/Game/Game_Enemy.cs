@@ -63,6 +63,9 @@ namespace GladiatorsGame
                     bleed = 6;
                     bleedDamage = 7;
                     break;
+                case 4:
+                    damageModifier = damageModifier * 2;
+                    break;
             }
 
             switch (suffixID)
