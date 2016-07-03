@@ -75,6 +75,9 @@ namespace GladiatorsGame
                 case 5:
                     health = health + 20;
                     break;
+                case 6:
+                    stun = 1;
+                    break;
             }
 
             switch (suffixID)
