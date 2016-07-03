@@ -66,6 +66,9 @@ namespace GladiatorsGame
                 case 4:
                     damageModifier = damageModifier * 2;
                     break;
+                case 5:
+                    health = health + 20;
+                    break;
             }
 
             switch (suffixID)
