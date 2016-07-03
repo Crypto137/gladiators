@@ -76,7 +76,8 @@ namespace GladiatorsGame
                     health = health + 20;
                     break;
                 case 6:
-                    //Reckless - NYI: increased damage range (-5 min, +5 max)
+                    baseMinDamage = baseMinDamage - 5;
+                    baseMaxDamage = baseMaxDamage + 5;
                     break;
                 case 7:
                     stun = 1;
