@@ -83,7 +83,7 @@ namespace GladiatorsGame
                     baseMaxDamage = baseMinDamage;
                     break;
                 case 8:
-                    //from the Mountains - NYI: no damage range (always min)
+                    baseMaxDamage = baseMinDamage;
                     break;
                 case 9:
                     //from the Abyss - NYI: no damage range (always max)
