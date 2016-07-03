@@ -86,7 +86,7 @@ namespace GladiatorsGame
                     baseMaxDamage = baseMinDamage;
                     break;
                 case 9:
-                    //from the Abyss - NYI: no damage range (always max)
+                    baseMinDamage = baseMaxDamage;
                     break;
                 case 10:
                     healthModifier = healthModifier + 10;
