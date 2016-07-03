@@ -63,6 +63,12 @@ namespace GladiatorsGame
                     bleed = 6;
                     bleedDamage = 7;
                     break;
+                case 2:
+                    //Savage - NYI: 10% critical hit chance on attack
+                    break;
+                case 3:
+                    //Wild - NYI: recover 5 hp every turn
+                    break;
                 case 4:
                     damageModifier = damageModifier * 2;
                     break;
