@@ -59,8 +59,9 @@ namespace GladiatorsGame
 
             switch (prefixID)
             {
-                default:
-                    //do nothing
+                case 1:
+                    bleed = 6;
+                    bleedDamage = 7;
                     break;
             }
 
