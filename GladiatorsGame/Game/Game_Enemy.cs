@@ -60,35 +60,40 @@ namespace GladiatorsGame
             switch (suffixID)
             {
                 case 1:
-                    //of the Night - NYI: get +5 damage after turn 6;
+                    //[NYI] of the Night: get +5 damage after turn 6;
                     break;
                 case 2:
-                    //of the Dusk - NYI: -10 damage modifier, get damage every turn
+                    //[NYI] of the Dusk: -10 damage modifier, get damage every turn
                     break;
                 case 3:
-                    //of the Dawn - NYI: +10 damage modifier, lose damage every turn
+                    //[NYI] of the Dawn: +10 damage modifier, lose damage every turn
                     break;
                 case 4:
-                    //the Untamed - NYI: deals more damage when less health
+                    //[NYI] the Untamed: deals more damage when less health
                     break;
                 case 5:
+                    //the Kingslayer: +1 hp for every player level
                     maxHealth = maxHealth + level;
                     health = maxHealth;
                     break;
                 case 6:
-                    //the Insane - NYI: 20% chance to attack self
+                    //[NYI] the Insane: 20% chance to attack self
                     break;
                 case 7:
+                    //from the Depths: no damage range (always average)
                     baseMinDamage = (baseMinDamage + baseMaxDamage) / 2;
                     baseMaxDamage = baseMinDamage;
                     break;
                 case 8:
+                    //from the Mountains: no damage range (always min)
                     baseMaxDamage = baseMinDamage;
                     break;
                 case 9:
+                    //from the Abyss: no damage range (always max)
                     baseMinDamage = baseMaxDamage;
                     break;
                 case 10:
+                    //Blessed by the Gods: +10 health, +5 damage
                     healthModifier = healthModifier + 10;
                     damageModifier = damageModifier + 5;
                     break;
@@ -97,26 +102,31 @@ namespace GladiatorsGame
             switch (prefixID)
             {
                 case 1:
+                    //Bleeding: start with 7 bleeding for 6 turns
                     bleed = 6;
                     bleedDamage = 7;
                     break;
                 case 2:
-                    //Savage - NYI: 10% critical hit chance on attack
+                    //[NYI] Savage: 10% critical hit chance on attack
                     break;
                 case 3:
-                    //Wild - NYI: recover 5 hp every turn
+                    //[NYI] Wild: recover 5 hp every turn
                     break;
                 case 4:
+                    //Ruthless: double damage modifier
                     damageModifier = damageModifier * 2;
                     break;
                 case 5:
+                    //Unstoppable: start with 20 hp higher than max
                     health = health + 20;
                     break;
                 case 6:
+                    //Reckless: increased amage range (-5 min, +5 max)
                     baseMinDamage = baseMinDamage - 5;
                     baseMaxDamage = baseMaxDamage + 5;
                     break;
                 case 7:
+                    //Lazy: skips the first turn
                     stun = 1;
                     break;
                 case 8:
