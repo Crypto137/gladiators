@@ -79,7 +79,8 @@ namespace GladiatorsGame
                     //the Insane - NYI: 20% chance to attack self
                     break;
                 case 7:
-                    //from the Depths - NYI: no damage range (always average)
+                    baseMinDamage = (baseMinDamage + baseMaxDamage) / 2;
+                    baseMaxDamage = baseMinDamage;
                     break;
                 case 8:
                     //from the Mountains - NYI: no damage range (always min)
