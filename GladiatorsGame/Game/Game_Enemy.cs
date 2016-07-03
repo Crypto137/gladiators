@@ -76,7 +76,19 @@ namespace GladiatorsGame
                     health = health + 20;
                     break;
                 case 6:
+                    //Reckless - NYI: increased damage range (-5 min, +5 max)
+                    break;
+                case 7:
                     stun = 1;
+                    break;
+                case 8:
+                    //Immortal - NYI: survives 1-3 turns with negative health
+                    break;
+                case 9:
+                    //Ironbound - NYI: takes 50% damage from direct hits (not bleed)
+                    break;
+                case 10:
+                    //Invincible - NYI: immune to bleed damage
                     break;
             }
 
