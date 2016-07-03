@@ -48,18 +48,6 @@ namespace GladiatorsGame
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
 
-            if (prefixID != 0)
-            {
-                healthModifier = healthModifier + 10;
-                damageModifier = damageModifier + 1;
-            }
-
-            if (suffixID != 0)
-            {
-                healthModifier = healthModifier + 10;
-                damageModifier = damageModifier + 1;
-            }
-
             turnCount = 1;
             maxHealth = rnd.Next(95, 106) + healthModifier;
             health = maxHealth;
@@ -68,6 +56,20 @@ namespace GladiatorsGame
             bleed = 0;
             bleedDamage = 0;
             daze = 0;
+
+            switch (prefixID)
+            {
+                default:
+                    //do nothing
+                    break;
+            }
+
+            switch (suffixID)
+            {
+                default:
+                    //do nothing
+                    break;
+            }
         }
 
         public string Attack(Player Target)
