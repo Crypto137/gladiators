@@ -11,7 +11,7 @@ namespace GladiatorsGame
         private static Random rnd = new Random();
 
         private string name;
-        private int level, turnCount, health, maxHealth;
+        private int level, turnCount, health, maxHealth, healthRegen, critChance, critDamageMultiplier;
         private int baseMinDamage, baseMaxDamage;
         private int stun, bleed, bleedDamage, daze;
 
@@ -45,6 +45,9 @@ namespace GladiatorsGame
             baseMinDamage = 8;
             baseMaxDamage = 12;
 
+            healthRegen = 0;
+            critChance = 0;
+            critDamageMultiplier = 1;
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
 
