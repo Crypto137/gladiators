@@ -24,7 +24,7 @@ namespace GladiatorsGame
 
             if (GameLogic.CheckChance(level) == true)
             {
-                prefixID = rnd.Next(1, 12);
+                prefixID = rnd.Next(1, 11);
             }
             else
             {
@@ -33,7 +33,7 @@ namespace GladiatorsGame
 
             if (GameLogic.CheckChance(level) == true)
             {
-                suffixID = rnd.Next(1, 12);
+                suffixID = rnd.Next(1, 11);
             }
             else
             {
