@@ -72,7 +72,8 @@ namespace GladiatorsGame
                     //the Untamed - NYI: deals more damage when less health
                     break;
                 case 5:
-                    //the Kingslayer - NYI: +1 hp for every player level
+                    maxHealth = maxHealth + level;
+                    health = maxHealth;
                     break;
                 case 6:
                     //the Insane - NYI: 20% chance to attack self
@@ -87,7 +88,8 @@ namespace GladiatorsGame
                     //from the Abyss - NYI: no damage range (always max)
                     break;
                 case 10:
-                    //Blessed by the Gods - +healthmodifier, +damagemodifier
+                    healthModifier = healthModifier + 10;
+                    damageModifier = damageModifier + 5;
                     break;
             }
 
