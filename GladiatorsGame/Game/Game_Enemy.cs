@@ -24,7 +24,7 @@ namespace GladiatorsGame
         {
             baseNameID = rnd.Next(0, 10);
 
-            if (GameLogic.CheckChance(level) == true)
+            if (GameLogic.CheckChance(level + 10) == true)
             {
                 prefixID = rnd.Next(1, 11);
             }
