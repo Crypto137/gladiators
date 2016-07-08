@@ -102,9 +102,16 @@ namespace GladiatorsGame
 
                         if (currentEnemy.GetBleed() >= 1)
                         {
-                            combatLog.WriteLine(currentEnemy.GetName() + " bleeds for " + currentEnemy.GetBleedDamage() + " damage!", ConsoleColor.Green);
-                            currentEnemy.SetHealth(currentEnemy.GetHealth() - currentEnemy.GetBleedDamage());
-                            currentEnemy.SetBleed(currentEnemy.GetBleed() - 1);
+                            if (currentEnemy.GetBleedImmune() == false)
+                            {
+                                combatLog.WriteLine(currentEnemy.GetName() + " bleeds for " + currentEnemy.GetBleedDamage() + " damage!", ConsoleColor.Green);
+                                currentEnemy.SetHealth(currentEnemy.GetHealth() - currentEnemy.GetBleedDamage());
+                                currentEnemy.SetBleed(currentEnemy.GetBleed() - 1);
+                            }
+                            else
+                            {
+                                combatLog.WriteLine(currentEnemy.GetName() + " ain't got time to bleed!", ConsoleColor.Red);
+                            }
                         }
 
                         if (currentEnemy.GetHealth() <= 0)

@@ -18,6 +18,8 @@ namespace GladiatorsGame
         private int baseNameID, prefixID, suffixID;
         private int healthModifier, damageModifier;
 
+        private bool bleedImmune;
+
         public void Generate(int level)
         {
             baseNameID = rnd.Next(0, 10);
@@ -59,6 +61,8 @@ namespace GladiatorsGame
             bleed = 0;
             bleedDamage = 0;
             daze = 0;
+
+            bleedImmune = false;
 
             switch (suffixID)
             {
@@ -141,7 +145,8 @@ namespace GladiatorsGame
                     //Ironbound - NYI: takes 50% damage from direct hits (not bleed)
                     break;
                 case 10:
-                    //Invincible - NYI: immune to bleed damage
+                    //Invincible: immune to bleed damage
+                    bleedImmune = true;
                     break;
             }
         }
@@ -313,6 +318,11 @@ namespace GladiatorsGame
         public int GetDaze()
         {
             return daze;
+        }
+
+        public bool GetBleedImmune()
+        {
+            return bleedImmune;
         }
 
         public void SetName(string newName)
