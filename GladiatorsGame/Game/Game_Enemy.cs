@@ -47,7 +47,7 @@ namespace GladiatorsGame
 
             healthRegen = 0;
             critChance = 0;
-            critDamageMultiplier = 1;
+            critDamageMultiplier = 2;
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
 
@@ -110,7 +110,8 @@ namespace GladiatorsGame
                     bleedDamage = 7;
                     break;
                 case 2:
-                    //[NYI] Savage: 10% critical hit chance on attack
+                    //Savage: 15% critical hit chance on attack
+                    critChance = 15;
                     break;
                 case 3:
                     //[NYI] Wild: recover 5 hp every turn
@@ -150,6 +151,12 @@ namespace GladiatorsGame
             string logText;
 
             damage = rnd.Next(baseMinDamage, baseMaxDamage + 1) + damageModifier;
+
+            if (GameLogic.CheckChance(critChance) == true)
+            {
+                damage = damage * critDamageMultiplier;
+            }
+
             Target.SetHealth(Target.GetHealth() - damage);
             turnCount = turnCount + 1;
 
