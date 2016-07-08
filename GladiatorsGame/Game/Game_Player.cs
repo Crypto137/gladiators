@@ -69,8 +69,13 @@ namespace GladiatorsGame
             string logText;
 
             damage = rnd.Next(8, 13) + (strength - 10);
+
+            if (target.GetDamageReduction() > 1)
+            {
+                damage = damage / target.GetDamageReduction();
+            }
+
             target.SetHealth(target.GetHealth() - damage);
-            turnCount = turnCount + 1;
 
             logText = "Your Heroic Assault dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
             turnCount = turnCount + 1;
@@ -83,10 +88,16 @@ namespace GladiatorsGame
             string logText;
 
             damage = rnd.Next(1, 21) + (strength - 10);
+
+            if (target.GetDamageReduction() > 1)
+            {
+                damage = damage / target.GetDamageReduction();
+            }
+
             target.SetHealth(target.GetHealth() - damage);
-            turnCount = turnCount + 1;
 
             logText = "Your Desperate Strike dealt " + damage.ToString() + " damage to " + target.GetName() + "!";
+            turnCount = turnCount + 1;
             return logText;
         }
 
@@ -97,6 +108,12 @@ namespace GladiatorsGame
             bool effect;
 
             damage = rnd.Next(2, 5);
+
+            if (target.GetDamageReduction() > 1)
+            {
+                damage = damage / target.GetDamageReduction();
+            }
+
             effect = GameLogic.CheckChance(50);
             logText = "Your Bash dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -113,7 +130,6 @@ namespace GladiatorsGame
             }
 
             turnCount = turnCount + 1;
-
             return logText;
         }
 
@@ -124,6 +140,12 @@ namespace GladiatorsGame
             bool effect;
 
             damage = rnd.Next(2, 5);
+
+            if (target.GetDamageReduction() > 1)
+            {
+                damage = damage / target.GetDamageReduction();
+            }
+
             effect = GameLogic.CheckChance(50);
             logText = "Your Dirt Throw dealt " + damage.ToString() + " damage to " + target.GetName() + "! ";
 
@@ -140,7 +162,6 @@ namespace GladiatorsGame
             }
 
             turnCount = turnCount + 1;
-
             return logText;
         }
 
@@ -165,7 +186,6 @@ namespace GladiatorsGame
             }
 
             turnCount = turnCount + 1;
-
             return logText;
         }
 

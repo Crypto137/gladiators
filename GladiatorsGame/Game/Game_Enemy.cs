@@ -11,7 +11,7 @@ namespace GladiatorsGame
         private static Random rnd = new Random();
 
         private string name;
-        private int level, turnCount, health, maxHealth, healthRegen, critChance, critDamageMultiplier;
+        private int level, turnCount, health, maxHealth, healthRegen, critChance, critDamageMultiplier, damageReduction;
         private int baseMinDamage, baseMaxDamage;
         private int stun, bleed, bleedDamage, daze;
 
@@ -52,6 +52,7 @@ namespace GladiatorsGame
             critDamageMultiplier = 2;
             healthModifier = (level - 1) * rnd.Next(4, 7);
             damageModifier = 0;
+            damageReduction = 1;
 
             turnCount = 1;
             maxHealth = rnd.Next(95, 106) + healthModifier;
@@ -142,7 +143,8 @@ namespace GladiatorsGame
                     //Immortal - NYI: survives 1-3 turns with negative health
                     break;
                 case 9:
-                    //Ironbound - NYI: takes 50% damage from direct hits (not bleed)
+                    //Ironbound: takes half damage from direct hits (not bleed)
+                    damageReduction = 2;
                     break;
                 case 10:
                     //Invincible: immune to bleed damage
@@ -196,9 +198,9 @@ namespace GladiatorsGame
             namePrefix[5] = "Unstoppable ";
             namePrefix[6] = "Reckless ";
             namePrefix[7] = "Lazy ";
-            namePrefix[8] = "Immortal";
-            namePrefix[9] = "Ironbound";
-            namePrefix[10] = "Invincible";
+            namePrefix[8] = "Immortal ";
+            namePrefix[9] = "Ironbound ";
+            namePrefix[10] = "Invincible ";
 
             nameSuffix[0] = "";
             nameSuffix[1] = " of the Night";
@@ -298,6 +300,11 @@ namespace GladiatorsGame
         public int GetHealthRegen()
         {
             return healthRegen;
+        }
+
+        public int GetDamageReduction()
+        {
+            return damageReduction;
         }
 
         public int GetStun()
