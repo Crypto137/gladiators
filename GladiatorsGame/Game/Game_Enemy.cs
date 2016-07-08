@@ -114,7 +114,8 @@ namespace GladiatorsGame
                     critChance = 15;
                     break;
                 case 3:
-                    //[NYI] Wild: recover 5 hp every turn
+                    //Wild: recover 5 hp every turn
+                    healthRegen = 5;
                     break;
                 case 4:
                     //Ruthless: double damage modifier
@@ -287,6 +288,11 @@ namespace GladiatorsGame
         public int GetMaxHealth()
         {
             return maxHealth;
+        }
+
+        public int GetHealthRegen()
+        {
+            return healthRegen;
         }
 
         public int GetStun()

@@ -94,6 +94,12 @@ namespace GladiatorsGame
                         System.Threading.Thread.Sleep(250);
 
                         //Enemy Turn
+                        if (currentEnemy.GetHealthRegen() >= 1)
+                        {
+                            combatLog.WriteLine(currentEnemy.GetName() + " recovers " + currentEnemy.GetHealthRegen() + " health.", ConsoleColor.Red);
+                            currentEnemy.SetHealth(currentEnemy.GetHealth() + currentEnemy.GetHealthRegen());
+                        }
+
                         if (currentEnemy.GetBleed() >= 1)
                         {
                             combatLog.WriteLine(currentEnemy.GetName() + " bleeds for " + currentEnemy.GetBleedDamage() + " damage!", ConsoleColor.Green);
