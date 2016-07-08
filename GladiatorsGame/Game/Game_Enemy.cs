@@ -51,7 +51,7 @@ namespace GladiatorsGame
             critChance = 0;
             critDamageMultiplier = 2;
             healthModifier = (level - 1) * rnd.Next(4, 7);
-            damageModifier = 0;
+            damageModifier = level / 3;
             damageReduction = 1;
 
             turnCount = 1;
