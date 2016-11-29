@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Gladiators")]
-[assembly: AssemblyCopyright("Copyright © 2016 Thunderstruck Games")]
+[assembly: AssemblyCopyright("Copyright © 2016 Evgeny Karasev")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

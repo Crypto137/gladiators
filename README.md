@@ -9,4 +9,4 @@ Key features:
 * Perma-death and no save feature results in every decision being meaningful and every session - unique.
 * Sometimes it actually happens to be quite fun.
 
-Copyright (c) 2016 Thunderstruck Games. All rights reserved. This software is being distributed completely free of charge under the MIT License. Please check the LICENSE file for more information.
+Copyright (c) 2016 Evgeny Karasev. All rights reserved. This software is being distributed completely free of charge under the MIT License. Please check the LICENSE file for more information.
